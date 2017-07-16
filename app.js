@@ -17,7 +17,11 @@ function load(){
 			}
 		},
 		mounted: function(){
-
+			var http_start = new XMLHttpRequest();
+			var params = "email=example2@kek.com&password=kek";
+			http_start.open("POST", "http://juniorjpdj.pl:9080/login", true);
+			http_start.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			http_start.send(params);
 		}
 	});
 }

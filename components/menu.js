@@ -53,6 +53,7 @@ Vue.component("menuContainer", {
 			this.setFullscreen(false);
 		},
 		stopRace: function(){
+			alert(this.boxesComponent.time);
 			this.boxesView = "boxes";
 		}
 	},
