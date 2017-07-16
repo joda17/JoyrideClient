@@ -1,5 +1,5 @@
 var BOXES = {
-	template: '<div><div class="box" style="background-image: url(icons/stats.png)" v-on:click="openStats"></div><div class="box" v-on:click="openProfile" style="background-image: url(icons/profile.png)"></div><div class="box" v-on:click="openAchievements" style="background-image: url(icons/ach.png)"></div><div class="box" v-on:click="openRace" style="background-image: url(icons/race.png)"></div></div>',
+	template: '<div style="text-align:center"><div class="box" style="background-image: url(icons/stats.png)" v-on:click="openStats"></div><div class="box" v-on:click="openProfile" style="background-image: url(icons/profile.png)"></div><div class="box" v-on:click="openAchievements" style="background-image: url(icons/ach.png)"></div><div class="box" v-on:click="openRace" style="background-image: url(icons/race.png)"></div></div>',
 	data: function(){
 		return {
 			menu: null
