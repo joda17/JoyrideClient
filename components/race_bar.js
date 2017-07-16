@@ -22,13 +22,7 @@ var RACE_BAR = {
 		}
 	},
 	computed: {
-		/*time: function(){
-			var d = new Date().getTime() - this.startTime;
-			console.log(d/1000);
-			var sec = (d/1000)%60;
-			var min = (d/1000)/60;
-			return min + ":" + sec;
-		}*/
+
 	},
 	mounted: function(){
 		this.$emit("loaded", this);

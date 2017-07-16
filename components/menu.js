@@ -49,8 +49,11 @@ Vue.component("menuContainer", {
 			this.setFullscreen(true);
 		},
 		startRace: function(){
-			this.boxesView = "race_bar"
+			this.boxesView = "race_bar";
 			this.setFullscreen(false);
+		},
+		stopRace: function(){
+			this.boxesView = "boxes";
 		}
 	},
 	mounted: function(){

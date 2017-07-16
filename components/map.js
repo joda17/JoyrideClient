@@ -34,7 +34,7 @@ Vue.component("maps", {
 			});
 
 			this.polyline = new google.maps.Polyline({
-				strokeColor: '#CBE6A3',
+				strokeColor: 'blue',
 				strokeOpacity: 1.0,
 				strokeWeight: 7
 			});
@@ -82,7 +82,7 @@ Vue.component("maps", {
 			return markers;
 		},
 		loadPath: function(p){
-			
+			this.polyline.setPath(p);
 		}
 	},
 	mounted: function(){
