@@ -4,7 +4,8 @@ function load(){
 		el: "#app",
 		data: {
 			maps: null,
-			menu: null
+			menu: null,
+			race: null
 		},
 		methods: {
 			mapsLoaded: function(m){
@@ -12,10 +13,11 @@ function load(){
 			},
 			menuLoaded: function(m){
 				this.menu = m;
+				m.app = this;
 			}
 		},
-		created: function(){
-	
+		mounted: function(){
+
 		}
 	});
 }

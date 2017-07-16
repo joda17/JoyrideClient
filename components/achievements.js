@@ -1,4 +1,4 @@
-var ACHIEVMENTS = {
+var ACHIEVEMENTS = {
 	template: '<ul><li v-for="item in items">{{ item.name }}  {{ item.description }}</li></ul>',
 	data: function(){
 		return {

@@ -1,5 +1,6 @@
 var MAP_MODE = {
-	BACKGROUND: 0
+	BACKGROUND: 0,
+	RACE: 1
 }
 Vue.component("maps", {
 	template: '<div id="maps"></div>',
@@ -8,7 +9,8 @@ Vue.component("maps", {
 			map: null,
 			forceCenter: false,
 			posMarker: null,
-			attractionsMarkers: [] 
+			attractionsMarkers: [],
+			polyline: null 
 		};
 	},
 	methods: {
@@ -30,6 +32,12 @@ Vue.component("maps", {
 					strokeWeight: 4
 				}
 			});
+
+			this.polyline = new google.maps.Polyline({
+				strokeColor: '#CBE6A3',
+				strokeOpacity: 1.0,
+				strokeWeight: 7
+			});
 			this.setMode(MAP_MODE.BACKGROUND);
 		},
 		setMode: function(m){
@@ -45,13 +53,26 @@ Vue.component("maps", {
 				for(var m of this.attractionsMarkers){
 					m.setMap(this.map);
 				}
-
+				this.polyline.setMap(null);
+				break;
+			case MAP_MODE.RACE:
+				this.forceCenter = true;
+				this.map.setOptions({
+					gestureHandling: "none",
+					zoomControl: false,
+					scrollwheel:  false,
+					disableDoubleClickZoom: true	
+				});
+				for(var m of this.attractionsMarkers){
+					m.setMap(null);
+				}
+				this.polyline.setMap(this.map);
 				break;
 			}
 		},
 		loadMarkers: function(a){
 			var markers = [];
-			for(var m of a){
+			if(a)for(var m of a){
 				var marker = new google.maps.Marker({
 					position: {lat: m.lat, lng: m.lng},
 					map: null
@@ -59,6 +80,9 @@ Vue.component("maps", {
 				markers.push(marker);
 			}
 			return markers;
+		},
+		loadPath: function(p){
+			
 		}
 	},
 	mounted: function(){

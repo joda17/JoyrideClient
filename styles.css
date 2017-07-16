@@ -62,3 +62,12 @@
 #menu[data-extended] #boxes-container {
 	bottom: calc(-80px - 15px - 15px);
 }
+
+.box {
+	background: red;
+	width: 60px;
+	height: 60px;
+	display: inline-block;
+	margin-top: 10px;
+	margin-left: 10px;
+}
