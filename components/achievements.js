@@ -1,5 +1,5 @@
 var ACHIEVEMENTS = {
-	template: '<ul><li v-for="item in items">{{ item.name }}  {{ item.description }}</li></ul>',
+	template: '<div><div class="achievement" v-for="item in items"><b>{{ item.name }}</b>  {{ item.description }}</div></div>',
 	data: function(){
 		return {
 			items: []

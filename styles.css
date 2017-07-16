@@ -71,3 +71,9 @@
 	margin-left: 10px;
 	background-size: 60px 60px;
 }
+
+.achievement {
+	height: 50px;
+	border: 1px solid black;
+	margin: 15px;
+}
